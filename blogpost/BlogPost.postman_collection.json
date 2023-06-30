@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "aeb59dde-45f6-46d4-9e07-6d921834c3c3",
+		"name": "BlogPost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23354805"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Mayur\",\r\n    \"email\":\"mayur123@gmail.com\",\r\n    \"password\":\"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/register"
+			},
+			"response": []
+		},
+		{
+			"name": "User Register cmp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Upforce\",\r\n    \"email\":\"aneri@upforce.tech\",\r\n    \"password\":\"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/register"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Mayur\",\r\n    \"email\":\"mayur123@gmail.com\",\r\n    \"password\":\"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/login"
+			},
+			"response": []
+		},
+		{
+			"name": "User Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Mayur\",\r\n    \"email\":\"mayur123@gmail.com\",\r\n    \"password\":\"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"The Verge\",\r\n    \"description\":\"What Can We Learn From This Blog\",\r\n    \"content\":\"The Verge’s website homepage is vibrant – a black and white theme with bright accents of orange and magenta.There is a collage of large headlines and pictures to attract site visitors’ attention below the blog’s title and the navigation bar.\",\r\n    \"author\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/posts/"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post with author",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"The Verge\",\r\n    \"description\":\"What Can We Learn From This Blog\",\r\n    \"content\":\"The Verge’s website homepage is vibrant – a black and white theme with bright accents of orange and magenta.There is a collage of large headlines and pictures to attract site visitors’ attention below the blog’s title and the navigation bar.\",\r\n    \"author\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/backend/posts/?author=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"backend",
+						"posts",
+						""
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Post",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"title\": \"The Verge\",\r\n        \"description\": \"What Can We Learn From This Blog\",\r\n        \"content\": \"The Verge’s website homepage is vibrant – a black and white theme with bright accents of orange and magenta.There is a collage of large headlines and pictures to attract site visitors’ attention below the blog’s title and the navigation bar.\",\r\n        \"created_at\": \"2023-06-30T09:02:51.016301Z\",\r\n        \"author\": \"Mayur\",\r\n        \"is_public\": true,\r\n        \"likes_count\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/posts/1/"
+			},
+			"response": []
+		},
+		{
+			"name": "Hit Like",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"post\":1,\r\n    \"author\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/api/posts/1/likes/"
+			},
+			"response": []
+		},
+		{
+			"name": "List of likes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/backend/posts/1/likes/"
+			},
+			"response": []
+		},
+		{
+			"name": "Destory like",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://127.0.0.1:8000/backend/api/posts/<int:pk>/likes/<int:user_id>/"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"title\": \"The Verge\",\r\n        \"description\": \"What Can We Learn From This Blog\",\r\n        \"content\": \"The Verge’s website homepage is vibrant – a black and white theme with bright accents of orange and magenta.There is a collage of large headlines and pictures to attract site visitors’ attention below the blog’s title and the navigation bar.\",\r\n        \"created_at\": \"2023-06-30T09:02:51.016301Z\",\r\n        \"author\": \"Mayur\",\r\n        \"is_public\": true,\r\n        \"likes_count\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/posts/1/"
+			},
+			"response": []
+		}
+	]
+}
